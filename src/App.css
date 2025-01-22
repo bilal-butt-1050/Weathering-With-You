@@ -1,38 +1,223 @@
-.App {
-  text-align: center;
+/* *************Navbar***************** */
+
+*{
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(45, 45, 45);
+    color: white;
+    padding: 0 2rem;
+    height: 4rem;
+    box-shadow: 0 0.3rem 0.4rem rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav-text {
+    font-size: 1.5rem;
+    color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-search {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-box {
+    height: 2.5rem;
+    width: 40rem;
+    border: none;
+    border-radius: 0.5rem 0 0 0.5rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+}
+
+.search-icon {
+    height: 2.5rem;
+    width: 3rem;
+    background-color: #febd68;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0.5rem 0.5rem 0;
+    color: white;
+    cursor: pointer;
+}
+
+.search-icon i {
+    font-size: 1.2rem;
+}
+
+.search-box:focus {
+    outline: none;
+    box-shadow: 0 0 0.3125rem rgba(255, 255, 255, 0.5);
+}
+
+.search-icon:hover {
+    background-color: #555;
+}
+
+/* *************Backgroud***************** */
+
+.bg {
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 4rem);
+    background-image: url('./bg-img.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/* *************Weather***************** */
+
+.weather-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 70vh;
+    margin: 4rem auto 0;
+    border-radius: 4rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent black overlay */
+}
+
+.box1-details {
+    width: 60%;
+    height: 100%; /* Adjust the height proportion for box1 */
+    background-image: url('./winter-1.jpg'); /* Set the background image for box1 */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 1rem;
+    z-index: 1;
+}
+
+.box1-details::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Transparent black overlay */
+    z-index: 0;
+}
+
+.location {
+    position: absolute;
+    top: 0.1rem;
+    right: 1rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.time {
+    position: absolute;
+    font-size: 3rem;
+    color: white;
+    font-weight: 400;
+    bottom: 2.7rem;
+}
+
+.day-date {
+    position: absolute;
+    font-size: 1.2rem;
+    color: white;
+    bottom: 2.5rem;
+}
+
+.Temperature {
+    font-size: 5rem;
+    font-weight: 500;
+    color: white;
+    position: absolute;
+    right: 2rem;
+    bottom: 2.5rem;
+    margin: 0;
+}
+
+.box1-details>p{
+    z-index: 1;
+}
+
+.box2-details {
+    width: 40%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top:3rem ;
+}
+
+.symbol-details {
+    position: relative;
+    z-index: 2;
+    border-bottom: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Symbol {
+    transform: scale(2.5);
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.symbol-text {
+    font-size: 2rem;
+    color: white;
+    margin: 0.3rem 0 0.3rem 0;
+}
+
+.box2-details > div {
+    position: relative;
+    z-index: 2;
+    margin-top: 1rem;
+}
+
+.weather-details>div>p {
+    font-size: 1.2rem;  
+    color: white;
+    margin: 0.5rem 0;
+    padding-bottom: 0.5rem;
+}
+
+.weather-details{
+    padding-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-details>div{
+    display: flex;
+    justify-content: space-between;
+    border-top:2px solid white ;
+    padding: 0 1rem 0 1rem;
+    width: 70%;
 }
